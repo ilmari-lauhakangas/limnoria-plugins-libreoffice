@@ -8,7 +8,7 @@ Welcome is a reimplementation of [WelcomeBot](https://github.com/qarkai/WelcomeB
 
 1. Install Limnoria, preferably from the [package repository of your Linux distribution](https://repology.org/project/limnoria/versions)
 2. Create a directory for the bot and in it a directory called `plugins`
-3. Copy the plugin directories in to the `plugins` directory
+3. Copy the plugin directories into the `plugins` directory
 4. In the bot directory, run `supybot-wizard`
 5. Say yes to the question about being an advanced user as it will allow you to configure the plugins as well
 6. Add yourself as the owner of the bot and store the password into your password manager
@@ -22,7 +22,9 @@ The greeters (people to be alerted of newcomers) for Welcome are channel-specifi
 
 The settings that are not channel-specific can be changed in this way: `nameofbot: config plugins.Welcome.waitPeriod 60`.
 
-The Welcome plugin stores known nicks in the SQLite3 database file `data/global/Welcome.sqlite3.db`. If you want to import nicks, an easy way is to create a CSV file with ID numbers as the first column and the nicks as the second. Then,
+The Welcome plugin stores known nicks in the SQLite3 database file `data/global/Welcome.sqlite3.db`. If a newcomer disconnects during the wait period, their nick is not stored. If a newcomer changes their nick (even multiple times) during the wait period, the most recent nick is stored. The nicks are cleaned before storing, so typical appended extra stuff such as numbers are left out.
+
+If you want to import nicks, an easy way is to create a CSV file with ID numbers as the first column and the nicks as the second. Then,
 
 1. `sqlite3 Welcome.sqlite3.db`
 2. `.import --csv /path/to/nicks.csv nicks`
