@@ -2,7 +2,7 @@ These are plugins for [Limnoria](https://limnoria.net/), a Python IRC bot. They 
 
 QuitAlert monitors one or more nicknames (typically bots) and alerts people, if they disconnect.
 
-Welcome is a reimplementation of [WelcomeBot](https://github.com/qarkai/WelcomeBot/tree/Py3), which was originally used by OpenHatch. The idea is to welcome newcomers, but in a way that minimises noise on the channel. The bot has a wait period and if people talk in the channel during the wait, it will not say anything.
+Welcome is a reimplementation of [WelcomeBot](https://github.com/qarkai/WelcomeBot), which was originally used by OpenHatch. The idea is to welcome newcomers, but in a way that minimises noise on the channel. The bot has a wait period and if people talk in the channel during the wait, it will not say anything.
 
 ## Setup
 
