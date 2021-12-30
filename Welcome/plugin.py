@@ -121,7 +121,7 @@ class Welcome(callbacks.Plugin):
         """Returns the current nick in case it was changed during
         the wait period."""
         for i, h in enumerate(history):
-            if h.nick and h.nick == nick:
+            if h.command == 'NICK' and h.nick == nick:
                 return self.nickDiff(history[i+1:], h.args[0])
         return nick
 
